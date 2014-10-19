@@ -121,9 +121,38 @@ function formatSuite(testSuite, filename) {
 * maven
 
 ## 项目初始化
-如果尚未初始化测试项目工程，那么首先需要执行命令```
-mvn archetype:generate -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifactId=jspringbot-selenium-archetype-plugin -DarchetypeVersion=RELEASE
+如果尚未初始化测试项目工程，那么首先需要执行命令```mvn archetype:generate -B -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifactId=jspringbot-selenium-archetype -DarchetypeVersion=RELEASE -DgroupId=com.elong.jspringbot -Dpackage=com.elong.jspringbot -DartifactId=jspringbot-selenium-<team> -Dversion=<version>```，其中```<team>```设置为所在团队的名称，```<version>```设置为对应被测项目的版本号。
+
+## 项目目录结构
+
+项目初始化完成以后，会在执行目录下产生jspringbot-selenium-<team>文件夹，该文件夹下目录结构为：
+
 ```
+src/
+├── main
+│   ├── java
+│   │   └── com
+│   │       └── elong
+│   │           └── jspringbot
+│   │               └── keyword
+│   │                   └── sample
+│   │                       └── SayHello.java
+│   └── resources
+│       └── desc
+│           └── SayHello.txt
+└── test
+    ├── resources
+    │   ├── jspringbot.properties
+    │   ├── log4j.properties
+    │   └── spring
+    │       └── jspringbot-global.xml
+    └── robotframework
+        ├── acceptance
+        │   └── SayHello.txt
+        └── selenium-resources.txt
+```
+
+用户可以在src/main目录下自定义关键字，具体操作见自定义关键字章节；在src/test/robotframework/acceptance目录下或者是子目录下存放测试用例。每个测试用例都是单个文件，根据用例间的依赖关系，测试用例可分为原子用例/顺序用例/笛卡尔集用例。对于在子目录下创建的测试用例文件，suite名为各层子目录用.连接的目录名，用例名为suite名.文件名的前缀。的比如在bing/search目录下创建的用例文件SayHello.txt，suite名为bing.search，用例名为bing.search.SayHello。
 
 ## 录制用例
 录制用例采用标准的selenium-ide录制方式来进行操作。
@@ -137,7 +166,7 @@ mvn archetype:generate -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifa
 Resource    ../../../selenium-resources.txt
 
 *** Variables ***
-${URL}    http://192.168.14.51/user/login
+${URL}    http://192.168.14.51/user/login/
 
 *** Keywords ***
 添加Mobile请求Header    [Arguments]    ${DeviceType}    ${ClientType}    ${Version}    ${DeviceId}    ${ChannelId}
@@ -169,7 +198,7 @@ Mobile用户正常登录功能
     Should Be Equal As Integers    ${cardNo}    49
 ```
 
-* csv格式
+* csv格式 [TODO]
 
 ```text
 *** Settings ***,,,,,,
@@ -207,32 +236,37 @@ Mobile用户正常登录功能,,,,,,
 ,${cardNo} =,Get JSON Value,$.CardNo,,,
 ```
 
-* html格式
+* html格式 [TODO]
 
 <img src="Mobile用户正常登录功能.png" alt="jspringbot-selenium excel格式测试用例" />
 
-* excel格式
+* excel格式 [TODO]
 
 样式与html格式一致，不过提供了可编辑能力。
 
 ### 选择格式
 
-打开selenium-ide，点击Options->Options->Formats，选择jspringbot，设置Format为想要导出的格式。如果选择的导出格式是text格式，那么需要设置Indent为想要缩进的空格数，支持2 spaces/4 spaces/8 spaces策略，推荐使用默认4个空格策略。
+打开selenium-ide，点击Options->Options->Formats，选择jspringbot，设置Format为想要导出的格式。如果选择的导出格式是text格式，那么需要设置Indent为想要缩进的空格数，支持2 spaces/4 spaces/8 spaces策略，推荐使用默认4个空格策略。对于别的格式，不需要关心缩进设置。
 
 <img src="jspringbot导出用例选项.png" alt="jspringbot导出用例选项" />
+
+如果修改了格式或者缩进策略，需要重新启动firefox。
 
 ### 导出
 * 如果想要只导出单个case，那么在Selenium IDE的Test Case窗口双击case名选中要导出的case，然后点击文件->Export Test Case As...->jspringbot，并设置导出的用例文件名为用例名＋后缀名。
 * 如果想要导出整个suite，那么点击文件->Export Test Suite As...->jspringbot，并设置导出的testsuite文件名为suite name＋后缀名。
 
+```
 | 导出格式 | 后缀名 |
 | -------- | ------ |
 | text     | .txt   |
 | csv      | .csv   |
 | html     | .html  |
 | excel    | .xlsx  |
+```
 
 ## 编写用例
+用户可以直接根据上述提到的格式规则手动编写用例，也可以在导出用例以后进行修改。
 
 ## 自定义关键字
 jspringbot-selenium框架支持用户自定义关键字，包括两种方式，一种是实现Keyword接口，另外一种是在方法上打@Setup @Teardown @Verify标签。
@@ -273,14 +307,28 @@ public class SayHello implements Keyword {
 }
 ```
 
-定义好SayHello这个java类，实现Keyword接口的execute方法，在SayHello这个类上打标签@Component及@KeywordInfo。在@KeywordInfo这个标签下，需要设置属性name为关键字的名称Say Hello，设置parameters为关键字后跟着的参数名，description为关键字的描述，建议存放在src/main/resources/desc目录下，描述文件名为类名.txt，比如此关键字的描述文件存放在了src/main/resources/desc/SayHello.txt文件中。
+定义好SayHello这个java类，实现Keyword接口的execute方法，在SayHello这个类上打标签@Component及@KeywordInfo。在@KeywordInfo这个标签下，需要设置属性name为关键字的名称Say Hello，设置parameters为关键字后跟着的参数名，description为关键字的描述，建议存放在src/main/resources/desc目录下，描述文件名为类名.txt，比如此关键字的描述文件存放在了src/main/resources/desc/SayHello.txt文件中。这样用户就可以在测试用例文件中使用Say Hello关键字了。
 
 * 打标签[TODO]
 
 采用japi框架原先所采用的@Setup/@Teardown/@Verify标签方式。
 
 ## 运行用例
+* 执行```mvn clean integration-test```将运行所有的测试用例。
+* 执行```mvn clean integration-test -Dtests=<test1>```将运行单个测试用例<test1>，<test1>为suite名.case名，case名不包含后缀。比如在src/test/robotframework/acceptance目录下，存在文件bing/sayHello.txt，要运行此sayHello用例，需要执行命令```mvn clean integration-test -Dtests=bing.sayHello```。
+* 默认情况下，用例是在firefox中运行的，如果想要在别的浏览器中运行，需要在命令行下加上参数```-Dbrowser=<browser>```，其中```<browser>```为浏览器的名称，包括```ie/firefox/chrome/safari/opera```。
+
+## 查看报告
+运行完用例以后，将在标准屏幕上打印各个用例成功失败的信息，并且在输出目录下产生robotframework-reports目录存放执行报告。
+* 标准屏幕打印如下：
+
+!["robotframework stdout reports"](robotframework-stdout-reports.png)
+
+* 在robotframework-reports目录下，report.html/log.html为用户需要查看的报告，TEST-acceptance.xml可作为持续集成引擎Jenkins的报告文件。在report.html中，可根据Tags/Type/Suites来过滤case，log.html包含了详细的统计信息及执行日志。
+
+!["robotframework log reports"](robotframework-log-reports.png)
 
 ## 案例
 1. [艺龙账号登陆测试用例](jspringbot-selenium-艺龙账号登陆测试用例.html)
 2. [vdisk文件操作测试用例](jspringbot-selenium-vdisk文件操作测试用例.html)
+3. 更多样例见samples工程。
