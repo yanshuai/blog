@@ -120,6 +120,11 @@ function formatSuite(testSuite, filename) {
 * java
 * maven
 
+## 项目初始化
+如果尚未初始化测试项目工程，那么首先需要执行命令```shell
+mvn archetype:generate -DgroupId=com.elong.jspringbot -DartifactId=jspringbot-selenium-artifact-plugin -Dversion=RELEASE
+```
+
 ## 录制用例
 录制用例采用标准的selenium-ide录制方式来进行操作。
 
@@ -230,6 +235,49 @@ Mobile用户正常登录功能,,,,,,
 ## 编写用例
 
 ## 自定义关键字
+jspringbot-selenium框架支持用户自定义关键字，包括两种方式，一种是实现Keyword接口，另外一种是在方法上打@Setup @Teardown @Verify标签。
+
+* 实现Keyword接口
+用户自定义关键字默认需要存放在com.elong.jspringbot.keyword包或者子包下，并实现Keyword接口：
+
+```java
+package org.jspringbot;
+
+public interface Keyword {
+
+    public Object execute(Object[] os) throws Exception;
+}
+```
+
+以sample工程SayHello为例：
+
+```java
+package com.elong.jspringbot.keyword.sample;
+
+import org.jspringbot.Keyword;
+import org.jspringbot.KeywordInfo;
+import org.springframework.stereotype.Component;
+
+@Component
+@KeywordInfo(
+        name = "Say Hello",
+        parameters = {},
+        description = "classpath:desc/SayHello.txt"
+)
+public class SayHello implements Keyword {
+
+    public Object execute(Object[] params) throws Exception {
+        System.out.println("hello, world!");
+        return null;
+    }
+}
+```
+
+定义好SayHello这个java类，实现Keyword接口的execute方法，在SayHello这个类上打标签@Component及@KeywordInfo。在@KeywordInfo这个标签下，需要设置属性name为关键字的名称Say Hello，设置parameters为关键字后跟着的参数名，description为关键字的描述，建议存放在src/main/resources/desc目录下，描述文件名为类名.txt，比如此关键字的描述文件存放在了src/main/resources/desc/SayHello.txt文件中。
+
+* 打标签[TODO]
+
+采用japi框架原先所采用的@Setup/@Teardown/@Verify标签方式。
 
 ## 运行用例
 
