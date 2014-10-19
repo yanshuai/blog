@@ -121,8 +121,8 @@ function formatSuite(testSuite, filename) {
 * maven
 
 ## 项目初始化
-如果尚未初始化测试项目工程，那么首先需要执行命令```shell
-mvn archetype:generate -DgroupId=com.elong.jspringbot -DartifactId=jspringbot-selenium-artifact-plugin -Dversion=RELEASE
+如果尚未初始化测试项目工程，那么首先需要执行命令```
+mvn archetype:generate -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifactId=jspringbot-selenium-archetype-plugin -DarchetypeVersion=RELEASE
 ```
 
 ## 录制用例
