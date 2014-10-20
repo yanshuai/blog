@@ -5,3 +5,61 @@ h1, .h1 {
 p {
   margin-left: 20px;
 }
+
+#banner {
+  margin-bottom: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #B7B7B7;
+}
+
+#banner .navbar-header .navbar-toggle {
+  background-color: #fff;
+}
+
+#banner .navbar-toggle .icon-bar {
+  background-color: #563d7c;
+}
+
+#banner .navbar-brand, #banner .navbar-nav > li > a {
+  font-weigth: 500;
+  color: #333;
+}
+
+#banner a.navbar-brand {
+  font-size: 24px;
+  color: #666;
+  text-shadow: 2px 1px 1px rgba(57, 57, 57, 0.29);
+}
+
+#search {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 15;
+  padding-top: 5px;
+}
+
+#search form {
+  margin: 0 15px;
+  position: relative;
+}
+
+#search .form-control {
+  width: 210px;
+  position: relative;
+  top: 5px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+#search form #search-btn {
+  color: #393939;
+  font-size: 15px;
+  font-weight: 600;
+  position: absolute;
+  left: 168px;
+  top: 2px;
+  background: transparent;
+}
