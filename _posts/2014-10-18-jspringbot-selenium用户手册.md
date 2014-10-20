@@ -124,6 +124,14 @@ function formatSuite(testSuite, filename) {
 
 * maven
 
+## 预备知识
+
+* selenium-ide使用
+
+* [xpath语法](http://www.w3schools.com/xpath/xpath_syntax.asp)
+
+* [CSS Selector](http://www.w3schools.com/cssref/css_selectors.asp)
+
 ## 测试项目
 
 ### 初始化
@@ -281,7 +289,7 @@ Mobile用户正常登录功能,,,,,,
 
 ## 编辑用例
 
-用户可以直接根据上述提到的格式规则手动编写用例，也可以在导出用例以后进行手动修改，还可以通过命令```mvn jspringbot:edison```启动web界面编辑（TODO）。
+用户可以直接根据上述提到的格式规则手动编写用例，也可以在导出用例以后进行手动修改，还可以通过命令```mvn jspringbot:edison```启动web界面来进行编辑（Pending?），获取得到当前测试工程所有关键字及关键字文档，包含搜素功能(TODO)，当前先参考引用的第三方库[jspringbot search](http://jspringbot.org/search.html)提供的关键字来使用。
 
 ## 自定义关键字
 
