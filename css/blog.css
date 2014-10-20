@@ -64,9 +64,8 @@ p {
   background: transparent;
 }
 
-#blogs {
+#main-content {
   margin-top: 20px;
-  padding-left: 0px;
 }
 
 .panel-default > .panel-heading {
@@ -77,7 +76,7 @@ p {
   font-size: 18px;
 }
 
-.panel-body {
+#blogs .panel-body {
   padding-left: 0;
 }
 
@@ -90,13 +89,43 @@ p {
   padding: 5px 5px 0px 0px;
 }
 
-#avatar {
+.avatar {
   padding-top: 12px;
   padding-right: 10px;
 }
 
-#avatar img {
+.avatar img {
   border: 0;
   margin: 0;
   border-radius: 50%;
+}
+
+#blogs {
+  padding-left: 0;
+}
+
+#sidebar {
+  padding-right: 0;
+}
+
+footer {
+  padding-top: 10px;
+  border-top: 1px solid #f2f2f2;
+  background-color: #fff;
+}
+
+footer .container {
+  height: 50px;
+  margin-bottom: 10px;
+  line-height: 50px;
+  color: #a6a6a6;
+}
+
+#site-icons {
+  font-size: 24px;
+}
+
+#site-icons a {
+  color: #a6a6a6;
+  padding-left: 5px;
 }
