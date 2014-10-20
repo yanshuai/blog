@@ -136,7 +136,7 @@ function formatSuite(testSuite, filename) {
 
 ### 初始化
 
-如果尚未初始化测试项目工程，那么首先需要执行命令```mvn archetype:generate -B -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifactId=jspringbot-selenium-archetype -DarchetypeVersion=RELEASE -DgroupId=com.elong.jspringbot -Dpackage=com.elong.jspringbot -DartifactId=jspringbot-selenium-<team> -Dversion=<version>```，其中```<team>```设置为所在团队的名称，```<version>```设置为对应被测项目的版本号。
+如果尚未初始化测试项目工程，那么首先需要执行命令```mvn archetype:generate -B -DinteractiveMode=false -DarchetypeGroupId=com.elong.jspringbot -DarchetypeArtifactId=jspringbot-selenium-archetype -DarchetypeVersion=RELEASE -DgroupId=com.elong.jspringbot -Dpackage=com.elong.jspringbot -DartifactId=jspringbot-selenium-<team> -Dversion=<version>```，其中```<team>```设置为所在团队的名称，```<version>```设置为对应被测项目的版本号。
 
 ### 项目结构
 
