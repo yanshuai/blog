@@ -77,7 +77,7 @@ p {
 }
 
 #blogs .panel-body {
-  padding-left: 0;
+  padding: 5px 0 5px 0; 
 }
 
 .panel-heading {
@@ -128,4 +128,15 @@ footer .container {
 #site-icons a {
   color: #a6a6a6;
   padding-left: 5px;
+}
+
+blockquote {
+  border-left: 2px solid #999;
+  font-size: 14px;
+  padding: 0;
+  margin: 10px 5px 10px 5px;
+}
+
+blockquote p {
+  margin-left: 10px;
 }
