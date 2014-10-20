@@ -63,3 +63,40 @@ p {
   top: 2px;
   background: transparent;
 }
+
+#blogs {
+  margin-top: 20px;
+  padding-left: 0px;
+}
+
+.panel-default > .panel-heading {
+  background-color: #fff;
+}
+
+.panel-title {
+  font-size: 18px;
+}
+
+.panel-body {
+  padding-left: 0;
+}
+
+.panel-heading {
+  padding-left: 5px;
+}
+
+.panel-footer {
+  background-color: #fff;
+  padding: 5px 5px 0px 0px;
+}
+
+#avatar {
+  padding-top: 12px;
+  padding-right: 10px;
+}
+
+#avatar img {
+  border: 0;
+  margin: 0;
+  border-radius: 50%;
+}
