@@ -2,6 +2,8 @@
 layout: base
 ---
 <h2>{{ page.title }}</h2>
-<p class='date'>{{ page.date | date: "%B %e, %Y" }}</p>
-<p><i>{{ page.perex }}</i></p>
+<blockquote>
+  <p>{{ page.date | date: "%B %e, %Y" }}</p>
+  <p>{{ page.perex }}</p>
+</blockquote>
 {{ content }}

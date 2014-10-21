@@ -130,7 +130,7 @@ function formatSuite(testSuite, filename) {
 
 * [xpath语法](http://www.w3schools.com/xpath/xpath_syntax.asp)
 
-* [CSS Selector](http://www.w3schools.com/cssref/css_selectors.asp)
+* [css selector](http://www.w3schools.com/cssref/css_selectors.asp)
 
 ### 测试项目
 
