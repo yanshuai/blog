@@ -151,3 +151,7 @@ blockquote p {
 li p {
   text-indent: 0em;
 }
+
+#disqus_thread {
+  margin: 5px 0px 5px 0px;
+}
