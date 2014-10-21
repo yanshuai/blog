@@ -66,6 +66,7 @@ p {
 
 #main-content {
   margin-top: 20px;
+  min-height: 550px;
 }
 
 .panel-default > .panel-heading {
