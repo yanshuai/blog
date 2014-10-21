@@ -1,9 +1,18 @@
 ---
 layout: base
 ---
-<h2>{{ page.title }}</h2>
-<blockquote>
-  <p>{{ page.date | date: "%B %e, %Y" }}</p>
-  <p>{{ page.perex }}</p>
-</blockquote>
-{{ content }}
+<div id="main-content" class="container">
+  <h2>{{ page.title }}</h2>
+  <blockquote>
+    <p>{{ page.date | date: "%B %e, %Y" }}</p>
+    <p>{{ page.perex }}</p>
+  </blockquote>
+  {{ content }}
+</div>
+
+<div class="container">
+  <div id="disqus_thread"></div>
+</div>
+
+<script type="text/javascript" src="http://yanshuai.disqus.com/embed.js" async="true"></script>
+<script type="text/javascript" src="http://yanshuai.disqus.com/count.js" async="true"></script>
