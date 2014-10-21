@@ -3,7 +3,7 @@ h2 {
 }
 
 p {
-  margin-left: 20px;
+  text-indent: 2em;
 }
 
 #banner {
@@ -140,4 +140,9 @@ blockquote {
 
 blockquote p {
   margin-left: 10px;
+  text-indent: 0em;
+}
+
+li p {
+  text-indent: 0em;
 }
