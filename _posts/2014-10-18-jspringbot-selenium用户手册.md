@@ -6,7 +6,7 @@ layout: post
 
 ### jspringbot-selenium简介
 
-jspringbot-selenium为QA提供基于关键字（可自定义）驱动的web ui测试能力，支持主流浏览器，包括Internet Explorer，Firefox，Chrome，Safari及Opera。
+jspringbot-selenium为QA提供基于关键字（可自定义）驱动的web ui测试能力，支持主流浏览器，包括Internet Explorer，Firefox（版本<=31.0），Chrome，Safari及Opera（版本<=12）。
 
 ### 预装环境
 
