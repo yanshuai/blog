@@ -367,10 +367,10 @@ public class SayHello implements Keyword {
 
 ### 参考文档
 
-1. [robotframework](http://robotframework.org)
+1. [robotframework: http://robotframework.org](http://robotframework.org)
 
-2. [jspringbot](http://jspringbot.org)
+2. [jspringbot: http://jspringbot.org](http://jspringbot.org)
 
-3. [robotframework Github](https://github.com/robotframework)
+3. [robotframework Github: https://github.com/robotframework](https://github.com/robotframework)
 
-4. [jspringbot Github](https://github.com/jspringbot)
+4. [jspringbot Github: https://github.com/jspringbot](https://github.com/jspringbot)
