@@ -6,7 +6,7 @@ layout: post
 
 ### jspringbot-selenium简介
 
-jspringbot-selenium为QA提供基于关键字（可自定义）驱动的web ui测试能力，支持主流浏览器，包括Internet Explorer，Firefox（版本<=31.0），Chrome，Safari及Opera（版本<=12）。
+[jspringbot-selenium](http://jspringbot.org/library-selenium.html)为QA提供基于[robotframework](http://robotframework.org/)关键字（可自定义）驱动的web ui测试能力，支持主流浏览器，包括Internet Explorer，Firefox（版本<=31.0），Chrome，Safari及Opera（版本<=12）。
 
 ### 预装环境
 
@@ -364,3 +364,13 @@ public class SayHello implements Keyword {
 2. [vdisk文件操作测试用例](jspringbot-selenium-vdisk文件操作测试用例.html)
 
 3. 更多样例见samples工程。
+
+### 参考文档
+
+1. [robotframework](http://robotframework.org)
+
+2. [jspringbot](http://jspringbot.org)
+
+3. [robotframework Github](https://github.com/robotframework)
+
+4. [jspringbot Github](https://github.com/jspringbot)
