@@ -293,7 +293,7 @@ Mobile用户正常登录功能,,,,,,
 
 ### 自定义关键字
 
-jspringbot-selenium框架支持用户自定义关键字，包括两种方式，一种是实现Keyword接口，另外一种是在方法上打@Setup/@Teardown/@Verify标签（TODO）。关键字使用不区分大小写，比如原生已经存在的关键字Navigate To，也可以写成navigateTo，或者是navigate to等格式。
+jspringbot-selenium框架支持用户自定义关键字，包括两种方式，一种是实现Keyword接口，另外一种是在方法上打@Setup/@Teardown/@Verify标签（TODO）。关键字使用不区分大小写，可将空格分隔符去除掉，比如原生已经存在的关键字Navigate To，也可以写成navigateTo，或者是navigate to等格式。
 
 * 实现Keyword接口
 
