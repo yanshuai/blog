@@ -155,3 +155,7 @@ li p {
 #disqus_thread {
   margin: 5px 0px 5px 0px;
 }
+
+ul, ol {
+  -webkit-padding-start: 20px;
+}
