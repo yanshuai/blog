@@ -64,8 +64,10 @@ src/
 ```
 
 用户可以在src/main目录下自定义关键字，具体操作见自定义关键字章节，定义好关键字以后，就可以在测试用例中使用定义好的关键字了。
-用户要将测试用例存放在src/test/robotframework/acceptance目录下或者是其子目录下。对于在子目录下创建的测试用例文件，suite名为各层子目录用.连接的目录名，用例名为suite名.文件名的前缀。的比如在bing/search目录下创建的用例文件SayHello.txt，suite名为bing.search，用例名为bing.search.SayHello。
+用户要将测试用例存放在src/test/robotframework/acceptance目录下或者是其子目录下（目录名中不能够包含.）。对于在子目录下创建的测试用例文件，suite名为各层子目录用.连接的目录名，用例名为suite名.文件名的前缀。的比如在bing/search目录下创建的用例文件SayHello.txt，suite名为bing.search，用例名为bing.search.SayHello。
 每个测试用例都是单个文件，根据用例间的依赖关系，测试用例可分为原子用例/顺序用例/笛卡尔集用例。
+
+备注：acceptance目录下或者其子目录名不能包含.，否则robotframework没法区分suite，比如，对于指定用例test.bak.Sample，就没法知道用例文件是test.bak/Sample.txt或者是test/bak/Sample.txt。
 
 ### 录制用例
 
