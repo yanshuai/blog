@@ -3,10 +3,7 @@ layout: base
 ---
 <div id="main-content" class="container">
   <h2>{{ page.title }}</h2>
-  <blockquote>
-    <p>{{ page.date | date: "%B %e, %Y" }}</p>
-    <p>{{ page.perex }}</p>
-  </blockquote>
+  <div class="date">{{ page.date | date: "%B %e, %Y" }}</div>
   {{ content }}
 </div>
 
