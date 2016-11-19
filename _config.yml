@@ -1,6 +1,6 @@
 highlighter: pygments
 markdown: redcarpet
-paginate: 5
+paginate: 9
 exclude:
   - README.md
 github: {
@@ -45,5 +45,6 @@ github: {
     "is_project_page": true,
     "show_downloads": true,
     "url": "http://username.github.io/blog",
-    "contributors": yanshuai
+    "contributors": yanshuai,
+    gems: [jekyll-paginate]
 }
