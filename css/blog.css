@@ -70,32 +70,17 @@ p {
 
 #main-content {
   margin-top: 20px;
-  min-height: 550px;
 }
 
-.panel-default > .panel-heading {
-  background-color: #fff;
+.panel {
+  min-height: 200px;
 }
 
-.panel-title {
+.title {
   font-size: 18px;
-}
-
-#blogs div.panel-body {
-  padding: 5px 0 5px 0; 
-}
-
-#blogs div.panel-heading {
-  padding-left: 5px;
-}
-
-#blogs div.panel-footer {
-  background-color: #fff;
-  padding: 5px 5px 0px 5px;
-}
-
-#blogs div.panel-footer p {
-  text-indent: 0em;
+  color: #000;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
 }
 
 .avatar {
@@ -107,14 +92,6 @@ p {
   border: 0;
   margin: 0;
   border-radius: 50%;
-}
-
-#blogs {
-  padding-left: 0;
-}
-
-#sidebar {
-  padding-right: 0;
 }
 
 footer {
@@ -130,28 +107,6 @@ footer .container {
   color: #a6a6a6;
 }
 
-#site-icons {
-  font-size: 24px;
-}
-
-#site-icons a {
-  color: #a6a6a6;
-  padding-left: 5px;
-}
-
-blockquote {
-  border-left: 2px solid #999;
-  font-size: 14px;
-  padding: 0;
-  margin: 10px 5px 10px 5px;
-}
-
-blockquote p {
-  margin-left: 10px;
-  text-indent: 0em;
-  font-style: italic;
-}
-
 li p {
   text-indent: 0em;
 }
@@ -162,4 +117,37 @@ li p {
 
 ul, ol {
   -webkit-padding-start: 20px;
+}
+
+.perex {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+.date {
+  color: #ccc;
+  font-size: 12px;
+}
+
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+blockquote {
+  padding: 0px 10px;
+}
+
+.panel-body {
+  padding: 0px 15px 0px 15px;
+}
+
+.panel-footer {
+  border-top: none;
+  background-color: inherit;
+  padding: 5px 15px 5px 15px;
+  position: absolute;
+  bottom: 20px;
+  width: 92%;
 }

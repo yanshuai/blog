@@ -2,25 +2,29 @@
 layout: base
 title: 首页
 ---
-<div id="main-content" class="container">
-  <div id="blogs" class="col-sm-8">
-    {% for post in paginator.posts %}
-    <section class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          <a href="http://blog.sartisty.name{{ post.url }}">{{ post.title }}</a>
-        </h3>
+<div id="main-content">
+  <div class="container">
+    <div class="row">
+      {% for post in paginator.posts %}
+      <div class="col-md-4">
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="title">
+              <a href="http://blog.yanshuai.space{{ post.url }}">{{ post.title }}</a>
+            </div>
+          </div>
+          <div class="panel-body">
+            <blockquote>
+              <div class="perex">{{ post.perex }}</div>
+            </blockquote>
+          </div>
+          <div class="panel-footer">
+            <div class="date">{{ post.date | date: "%b %e, %Y" }}</div>
+          </div>
+        </div>
       </div>
-      <div class="panel-body">
-        <blockquote>
-          <p>{{ post.perex }}</p>
-        </blockquote>
-      </div>
-      <div class="panel-footer">
-        <p class="date">{{ post.date | date: "%b %e, %Y" }}</p>
-      </div>
-    </section>
-    {% endfor %}
+      {% endfor %}
+    </div>
     <div class="pagination">
       {% if paginator.previous_page == 1 %}
       <a href="/" class="previous">Previous</a>, 
@@ -36,16 +40,5 @@ title: 首页
       {% endif %}
       <span> Page {{paginator.page}} of {{paginator.total_pages}}.</span>
     </div>
-  </div>
-
-  <div id="sidebar" class="col-sm-4">
-    <section class="panel panel-default">
-      <div class="panel-heading">
-        <span>标签</span>
-      </div>
-      <div class="panel-body">
-        <span><b>jspringbot</b></span>
-      </div>
-    </section>
   </div>
 </div>
