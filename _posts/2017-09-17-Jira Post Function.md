@@ -1,3 +1,10 @@
+---
+title: Jira Post Function
+perex: Jira Post Function Sample
+layout: post
+---
+
+```java
 import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.ComponentManager;
 import com.atlassian.jira.issue.CustomFieldManager;
@@ -16,23 +23,12 @@ import com.atlassian.jira.event.type.EventDispatchOption;
 UserManager userManager = ComponentAccessor.getUserManager();
 IssueManager issueManager = ComponentAccessor.getIssueManager();
 CustomFieldManager customFieldManager = ComponentAccessor.getCustomFieldManager();
-CustomField customField = customFieldManager.getCustomFieldObjectByName("业务线");
+CustomField customField = customFieldManager.getCustomFieldObjectByName("<customFieldName>");
 MutableIssue mutableIssue = issue.getIssueObject();
-def comp = mutableIssue.getCustomFieldValue(customField);
-def str = comp.toString();
+def customFieldValue = mutableIssue.getCustomFieldValue(customField);
+def str = customFieldValue.toString();
 def reporter = mutableIssue.getReporter();
 def assignee = mutableIssue.getAssignee();
-
-switch (str) {
-  case "1":
-    assignee = userManager.getUserByKey("1");
-    break;
-  case "2":
-    assignee = userManager.getUserByKey("2");
-    break;
-  default:
-    assignee = userManager.getUserByKey("yanshuai");
-}
-
 mutableIssue.setAssignee(assignee);
 issueManager.updateIssue(reporter, mutableIssue, EventDispatchOption.ISSUE_UPDATED, false);
+```
