@@ -1,50 +1,27 @@
+title: 闫帅的个人空间
+email: sartisty@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  闫帅的个人空间
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "https://yanshuai.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username: yanshuai
 highlighter: pygments
 markdown: redcarpet
+theme: minima
 paginate: 9
+plugins:
+  - jekyll-feed
+  - github-pages
+  - jekyll-paginate
 exclude:
   - README.md
-github: {
-    "versions": {
-        "jekyll": "1.5.1",
-        "kramdown": "1.3.1",
-        "liquid": "2.5.5",
-        "maruku": "0.7.0",
-        "rdiscount": "2.1.7",
-        "redcarpet": "2.3.0",
-        "RedCloth": "4.2.9",
-        "jemoji": "0.1.0",
-        "jekyll-mentions": "0.0.6",
-        "jekyll-redirect-from": "0.3.1",
-        "jekyll-sitemap": "0.2.0",
-        "github-pages": "18",
-        "ruby": "2.1.1"
-    },
-    "hostname": "github.com",
-    "pages_hostname": "github.io",
-    "api_url": "https://api.github.com",
-    "environment": "dotcom",
-    "public_repositories": blog,
-    "organization_members": yanshuai,
-    "build_revision": "cbd866ebf142088896cbe71422b949de7f864bce",
-    "project_title": "blog",
-    "project_tagline": "A GitHub Pages site to showcase repository metadata",
-    "owner_name": "github",
-    "owner_url": "https://github.com/github",
-    "owner_gravatar_url": "https://github.com/github.png",
-    "repository_url": "https://github.com/github/blog",
-    "repository_nwo": "github/blog",
-    "repository_name": "blog",
-    "zip_url": "https://github.com/github/blog/zipball/gh-pages",
-    "tar_url": "https://github.com/github/blog/tarball/gh-pages",
-    "clone_url": "https://github.com/github/blog.git",
-    "releases_url": "https://github.com/github/blog/releases",
-    "issues_url": "https://github.com/github/blog/issues",
-    "wiki_url": "https://github.com/github/blog/wiki",
-    "language": null,
-    "is_user_page": false,
-    "is_project_page": true,
-    "show_downloads": true,
-    "url": "http://username.github.io/blog",
-    "contributors": yanshuai,
-    gems: [jekyll-paginate]
-}
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

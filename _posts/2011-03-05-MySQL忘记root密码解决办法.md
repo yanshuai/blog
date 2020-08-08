@@ -1,7 +1,9 @@
 ---
-title: 忘记MySQL root密码解决办法
-perex: 当忘记mysql root密码时，重新设置root密码的详细步骤
 layout: post
+title: 忘记MySQL root密码解决办法
+date: 2011-03-05 00:00:00 +0800
+perex: 当忘记mysql root密码时，重新设置root密码的详细步骤
+categories: MySQL
 ---
 
 # 忘记密码
